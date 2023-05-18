@@ -103,3 +103,16 @@ h5 {
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
+
+.hero {
+  background-image: url("assets/images/hero.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-image: none;
+  }
+}
