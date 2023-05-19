@@ -24,3 +24,15 @@ if (scrollToLinks.length) {
         }
     })
 }
+
+let options = {
+    timeZone: 'Europe/Budapest',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  },
+formatter = new Intl.DateTimeFormat([], options);
+
+setInterval(() => {
+    document.getElementById('time').innerText = formatter.format(new Date())
+}, 1000)
