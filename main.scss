@@ -1,8 +1,9 @@
 :root {
-    --color-brand-black: #1C1C1C;
-    --color-brand-white: #E7E3DD;
-    --color-brand-purple: #4253FF;
-    --color-brand-yellow: #F0D72E;
+    --color-brand-black: rgb(28, 28, 28);
+    --color-brand-white: rgb(232, 228, 222);
+    --color-brand-white-raw: 232, 228, 222;
+    --color-brand-purple: rgb(66, 82, 255);
+    --color-brand-yellow: rgb(240, 214, 46);
     --font-title: 'Bowlby One', cursive;
     --font-body: 'Inter', sans-serif;
 }
@@ -108,4 +109,14 @@ h5 {
     .hero {
         background-image: none
     }
+}
+
+#nav.sticking > div {
+    background-color: rgba(var(--color-brand-white-raw), 0.8);
+    color: var(--color-brand-black);
+    border-color: var(--color-brand-black);
+}
+
+#nav.sticking svg path {
+    fill: var(--color-brand-purple);
 }
