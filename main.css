@@ -110,11 +110,13 @@ h5 {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+  min-height: 100svh;
 }
 
 @media (min-width: 768px) {
   .hero {
     background-image: none;
+    min-height: 95svh;
   }
 }
 #nav.sticking > div {
