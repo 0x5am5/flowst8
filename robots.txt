@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /styleguide
+Disallow: /success
+
+Sitemap: https://flowst8.dev/sitemap.xml
