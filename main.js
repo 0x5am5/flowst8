@@ -17,7 +17,7 @@ if (scrollToLinks.length) {
             link.addEventListener('click', (e) => {
                 e.preventDefault()
                 window.scrollTo({
-                    top: target.offsetTop - 50,
+                    top: target.offsetTop - 100,
                     behavior: 'smooth'
                 })
             })
