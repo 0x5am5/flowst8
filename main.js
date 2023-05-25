@@ -8,7 +8,7 @@ if (faqs.length) {
     })
 }
 
-const scrollToLinks = Array.from(document.querySelectorAll('[href^="#"]'))
+const scrollToLinks = Array.from(document.querySelectorAll('[href^="/#"]'))
 if (scrollToLinks.length) {
     scrollToLinks.forEach(link => {
         const target = document.getElementById(link.hash.substr(1))
