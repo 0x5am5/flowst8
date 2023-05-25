@@ -103,12 +103,14 @@ h5 {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+    min-height: 100vh;
     min-height: 100svh;
 }
 
 @media (min-width: 768px) {
     .hero {
         background-image: none;
+        min-height: 100vh;
         min-height: 95svh
     }
 }
@@ -121,4 +123,16 @@ h5 {
 
 #nav.sticking svg path {
     fill: var(--color-brand-purple);
+}
+
+[data-store-image]:hover {
+    img {
+        opacity: 1
+    }
+}
+
+[data-store-buy][href=""],
+[data-store-buy][href="Please select"] {
+    pointer-events: none;
+    opacity: .8;
 }

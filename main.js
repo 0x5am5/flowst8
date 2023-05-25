@@ -47,3 +47,13 @@ formatter = new Intl.DateTimeFormat([], options);
 setInterval(() => {
     document.getElementById('time').innerText = formatter.format(new Date())
 }, 1000)
+
+const sizeSelector = Array.from(document.querySelectorAll('[data-store-product]'))
+if (sizeSelector.length) {
+    sizeSelector.forEach(product => {
+        const buyButton = product.querySelector('[data-store-buy]')
+        product.addEventListener('change', (e) => {
+            buyButton.href = e.target.value
+        })
+    })
+}
