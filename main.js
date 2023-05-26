@@ -57,3 +57,18 @@ if (sizeSelector.length) {
         })
     })
 }
+
+const logoBar = document.querySelector('[data-logo-bar]')
+if (logoBar) {
+    const logos = document.querySelector("[data-logo-bar]")
+    const clone = innerBar.cloneNode(true)
+    logos.after(clone)
+    gsap.fromTo('[data-logo-inner]', {
+        x: '0'
+    }, {
+        x: '-100%',
+        repeat: -1,
+        duration: 10,
+        ease: 'none',
+    })
+}

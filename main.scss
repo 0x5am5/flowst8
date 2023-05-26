@@ -104,14 +104,12 @@ h5 {
     background-position: center center;
     background-size: contain;
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 95svh;
 }
 
 @media (min-width: 768px) {
     .hero {
-        background-image: none;
-        min-height: 100vh;
-        min-height: 95svh
+        background-image: none
     }
 }
 
