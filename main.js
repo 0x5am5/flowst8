@@ -28,7 +28,7 @@ if (scrollToLinks.length) {
 const nav = document.getElementById('nav')
 const watcher = document.createElement('div')
 watcher.setAttribute('data-scroll-watcher', '')
-nav.before(watcher,)
+nav.before(watcher)
 
 const navObserver = new IntersectionObserver((entries) => {
     nav.classList.toggle('sticking', !entries[0].isIntersecting)
@@ -41,7 +41,7 @@ let options = {
     hour: 'numeric',
     minute: 'numeric',
     second: 'numeric',
-  },
+  }
 const formatter = new Intl.DateTimeFormat([], options);
 
 setInterval(() => {
