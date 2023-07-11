@@ -1,5 +1,6 @@
 :root {
     --color-brand-black: rgb(28, 28, 28);
+    --color-brand-black-raw: 28, 28, 28;
     --color-brand-white: rgb(232, 228, 222);
     --color-brand-white-raw: 232, 228, 222;
     --color-brand-purple: rgb(66, 82, 255);
@@ -31,7 +32,9 @@ h5 {
     color: var(--color-brand-black);
 }
 
-.text-brand-white {
+.text-brand-white,
+.hover\:text-brand-white:hover,
+.focus\:text-brand-white:focus {
     color: var(--color-brand-white);
 }
 
@@ -51,11 +54,15 @@ h5 {
     color: var(--color-brand-yellow);
 }
 
-.bg-brand-black {
+.bg-brand-black,
+.hover\:bg-brand-black:hover,
+.focus\:bg-brand-black:focus {
     background-color: var(--color-brand-black);
 }
 
-.bg-brand-white {
+.bg-brand-white,
+.hover\:bg-brand-white:hover,
+.focus\:bg-brand-white:focus {
     background-color: var(--color-brand-white);
 }
 
@@ -133,4 +140,15 @@ h5 {
 [data-store-buy][href="Please select"] {
     pointer-events: none;
     opacity: .8;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: var(--color-brand-white);
+    background: var(--color-brand-purple);
+}
+
+::selection {
+    color: var(--color-brand-white);
+    background: var(--color-brand-purple);
 }

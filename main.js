@@ -37,7 +37,7 @@ const navObserver = new IntersectionObserver((entries) => {
 navObserver.observe(watcher)
 
 let options = {
-    timeZone: 'Europe/Vilnius',
+    timeZone: 'Europe/Mulhouse',
     hour: 'numeric',
     minute: 'numeric',
     second: 'numeric',
