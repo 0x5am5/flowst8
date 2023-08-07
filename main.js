@@ -32,12 +32,15 @@ nav.before(watcher)
 
 const navObserver = new IntersectionObserver((entries) => {
     nav.classList.toggle('sticking', !entries[0].isIntersecting)
+    nav.querySelector(`a.-rotate-3`)?.classList.remove('-rotate-3')
+    nav.querySelector(`a.font-bold`)?.classList.remove('font-bold')
+    nav.querySelector(`a.text-brand-purple`)?.classList.remove('text-brand-purple')
 }, {rootMargin: '200px 0px 0px 0px'})
 
 navObserver.observe(watcher)
 
 let options = {
-    timeZone: 'Europe/Berlin',
+    timeZone: 'Europe/London',
     hour: 'numeric',
     minute: 'numeric',
     second: 'numeric',
@@ -58,17 +61,39 @@ if (sizeSelector.length) {
     })
 }
 
-const logoBar = document.querySelector('[data-logo-bar]')
-if (logoBar) {
-    const logos = document.querySelector("[data-logo-bar]")
-    const clone = innerBar.cloneNode(true)
-    logos.after(clone)
-    gsap.fromTo('[data-logo-inner]', {
-        x: '0'
-    }, {
-        x: '-100%',
-        repeat: -1,
-        duration: 10,
-        ease: 'none',
+// const logoBar = document.querySelector('[data-logo-bar]')
+// if (logoBar) {
+//     const logos = document.querySelector("[data-logo-bar]")
+//     const clone = innerBar.cloneNode(true)
+//     logos.after(clone)
+//     gsap.fromTo('[data-logo-inner]', {
+//         x: '0'
+//     }, {
+//         x: '-100%',
+//         repeat: -1,
+//         duration: 10,
+//         ease: 'none',
+//     })
+// }
+
+const pageSections = document.querySelectorAll('section[id]')
+if (pageSections.length) {
+    pageSections.forEach((section, index) => {
+        section.setAttribute('data-scroll-section-watcher', index)
+        const sectionObserver = new IntersectionObserver((entries) => {
+            const sectionId = entries[0].target.id
+
+            if (entries[0].isIntersecting) {
+                nav.querySelector(`a.-rotate-3`)?.classList.remove('-rotate-3')
+                nav.querySelector(`a.font-bold`)?.classList.remove('font-bold')
+                nav.querySelector(`a.text-brand-purple`)?.classList.remove('text-brand-purple')
+                nav.querySelector(`a[href*=${sectionId}]`).classList.add('-rotate-3')
+                nav.querySelector(`a[href*=${sectionId}]`).classList.add('font-bold')
+                nav.querySelector(`a[href*=${sectionId}]`).classList.add('text-brand-purple')
+            }
+
+        }, {rootMargin: '0px', threshold: 0.5})
+        sectionObserver.observe(section)
     })
+
 }

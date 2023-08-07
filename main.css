@@ -145,7 +145,8 @@ h5 {
   opacity: 0.8;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: var(--color-brand-white);
   background: var(--color-brand-purple);
 }
