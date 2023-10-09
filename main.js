@@ -40,7 +40,7 @@ const navObserver = new IntersectionObserver((entries) => {
 navObserver.observe(watcher)
 
 let options = {
-    timeZone: 'Europe/London',
+    timeZone: 'Africa/Johannesburg',
     hour: 'numeric',
     minute: 'numeric',
     second: 'numeric',
@@ -96,4 +96,13 @@ if (pageSections.length) {
         sectionObserver.observe(section)
     })
 
+}
+
+const menuButton = document.getElementById('menu-button')
+if (menuButton) {
+    window.addEventListener('keyup', (e) => {
+        if (e.key === "Escape") {
+            pgia.play(menuButton, 'Close Menu')
+        }
+    })
 }
