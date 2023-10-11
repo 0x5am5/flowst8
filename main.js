@@ -97,12 +97,3 @@ if (pageSections.length) {
     })
 
 }
-
-const menuButton = document.getElementById('menu-button')
-if (menuButton) {
-    window.addEventListener('keyup', (e) => {
-        if (e.key === "Escape") {
-            pgia.play(menuButton, 'Close Menu')
-        }
-    })
-}
