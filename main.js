@@ -40,16 +40,18 @@ const navObserver = new IntersectionObserver((entries) => {
 navObserver.observe(watcher)
 
 let options = {
-    timeZone: 'Africa/Johannesburg',
+    timeZone: 'Africa/Nairobi',
     hour: 'numeric',
     minute: 'numeric',
-    second: 'numeric',
+    hour12: true
   }
-const formatter = new Intl.DateTimeFormat([], options);
+const formatter = new Intl.DateTimeFormat("en", options);
 
-setInterval(() => {
+function setTime() {
     document.getElementById('time').innerText = formatter.format(new Date())
-}, 1000)
+}
+setTime()
+setInterval(setTime, 60 * 1000)
 
 const sizeSelector = Array.from(document.querySelectorAll('[data-store-product]'))
 if (sizeSelector.length) {
@@ -76,7 +78,7 @@ if (sizeSelector.length) {
 //     })
 // }
 
-const pageSections = document.querySelectorAll('section[id]')
+const pageSections = Array.from(document.querySelectorAll('section[id]'))
 if (pageSections.length) {
     pageSections.forEach((section, index) => {
         section.setAttribute('data-scroll-section-watcher', index)
@@ -87,9 +89,9 @@ if (pageSections.length) {
                 nav.querySelector(`a.-rotate-3`)?.classList.remove('-rotate-3')
                 nav.querySelector(`a.font-bold`)?.classList.remove('font-bold')
                 nav.querySelector(`a.text-brand-purple`)?.classList.remove('text-brand-purple')
-                nav.querySelector(`a[href*=${sectionId}]`).classList.add('-rotate-3')
-                nav.querySelector(`a[href*=${sectionId}]`).classList.add('font-bold')
-                nav.querySelector(`a[href*=${sectionId}]`).classList.add('text-brand-purple')
+                nav.querySelector(`a[href*=${sectionId}]`)?.classList.add('-rotate-3')
+                nav.querySelector(`a[href*=${sectionId}]`)?.classList.add('font-bold')
+                nav.querySelector(`a[href*=${sectionId}]`)?.classList.add('text-brand-purple')
             }
 
         }, {rootMargin: '0px', threshold: 0.5})
