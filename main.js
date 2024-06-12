@@ -40,7 +40,7 @@ const navObserver = new IntersectionObserver((entries) => {
 navObserver.observe(watcher)
 
 let options = {
-    timeZone: 'Africa/Nairobi',
+    timeZone: 'Europe/London',
     hour: 'numeric',
     minute: 'numeric',
     hour12: true
@@ -102,7 +102,6 @@ if (pageSections.length) {
 
 
 const paymentLinks = document.getElementById('payment-links')
-
 if (paymentLinks) {
     const tabs = paymentLinks.querySelector('.payment-links-tabs')
     const tabsBody = Array.from(paymentLinks.querySelectorAll('.payment-links-tabs-body'))
@@ -119,6 +118,4 @@ if (paymentLinks) {
         e.target.parentNode.classList.add('text-brand-white')
         e.target.parentNode.classList.add('bg-brand-purple')
     })
-
-
 }
