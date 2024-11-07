@@ -40,7 +40,7 @@ const navObserver = new IntersectionObserver((entries) => {
 navObserver.observe(watcher)
 
 let options = {
-    timeZone: 'Europe/Rome',
+    timeZone: 'Europe/London',
     hour: 'numeric',
     minute: 'numeric',
     hour12: true
