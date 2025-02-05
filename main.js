@@ -107,10 +107,8 @@ if (paymentLinks) {
     const tabsLabels = Array.from(tabs.querySelectorAll('label'))
 
     tabs.addEventListener('change', (e) => {
-        const bulkPrice = '';
-        const defaultPrice = '';
-
-        console.log(e.target.dataset);
+        const bulkPrice = e.target.dataset.bulk;
+        const defaultPrice = e.target.dataset.default;
 
         tabsLabels.forEach(label => {
             label.classList.remove('text-brand-white')   
@@ -119,5 +117,8 @@ if (paymentLinks) {
 
         e.target.parentNode.classList.add('text-brand-white')
         e.target.parentNode.classList.add('bg-brand-purple')
+
+        document.getElementById('default-button').href = defaultPrice;
+        document.getElementById('bulk-button').href = bulkPrice;
     })
 }
