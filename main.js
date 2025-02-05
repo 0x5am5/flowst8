@@ -104,17 +104,19 @@ if (pageSections.length) {
 const paymentLinks = document.getElementById('payment-links')
 if (paymentLinks) {
     const tabs = paymentLinks.querySelector('.payment-links-tabs')
-    const tabsBody = Array.from(paymentLinks.querySelectorAll('.payment-links-tabs-body'))
     const tabsLabels = Array.from(tabs.querySelectorAll('label'))
 
     tabs.addEventListener('change', (e) => {
-        tabsBody.forEach(tab => tab.classList.add('hidden'))
+        const bulkPrice = '';
+        const defaultPrice = '';
+
+        console.log(e.target.dataset);
+
         tabsLabels.forEach(label => {
             label.classList.remove('text-brand-white')   
             label.classList.remove('bg-brand-purple')   
         })
 
-        document.getElementById(e.target.value).classList.remove('hidden')
         e.target.parentNode.classList.add('text-brand-white')
         e.target.parentNode.classList.add('bg-brand-purple')
     })
