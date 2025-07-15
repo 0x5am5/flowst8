@@ -83,7 +83,6 @@ h5 {
   position: relative;
   -webkit-transition: -webkit-transform 0.1s ease-in-out, -webkit-box-shadow 0.1s ease-in-out;
   transition: -webkit-transform 0.1s ease-in-out, -webkit-box-shadow 0.1s ease-in-out;
-  -o-transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out, -webkit-box-shadow 0.1s ease-in-out;
 }
@@ -97,7 +96,6 @@ h5 {
 [data-faq-plus] {
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
   transition: -webkit-transform 0.2s ease-in-out;
-  -o-transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
